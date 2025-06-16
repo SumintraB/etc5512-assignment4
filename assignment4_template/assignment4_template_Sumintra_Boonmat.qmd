@@ -1,0 +1,240 @@
+---
+title: "Has home ground advantage significantly affected match outcomes over the past decade of AFL (2014-2024)"
+subtitle: "Assignment 4 ETC5512"
+author: "Sumintra Boonmat"
+format: html
+editor: visual
+---
+
+::: panel-tabset
+<!-- Task 1 Tab: Data and Documenting -->
+
+## Data and Documenting
+
+###### **Question1:**
+
+Has home ground advantage significantly affected match outcomes over the past decade of AFL from 2014 to 2024.
+
+I’m an AFL fan, and home advantage is often discussed but rarely quantified across time and teams. I am particularly interested in whether this effect varies by team or changes during finals.
+
+###### **Question2: What data will you be using to answer that question? Explain why this data is suitable for the task.**
+
+To answer the question I use the dataset from [AFL Tables](https://afltables.com/afl/stats/biglists/bg3.txt){.uri} which contains historical records of every AFL game played since 1897 up to 2024 season in a plain-text format. Moreover, the dataset also includes variables which are all necessary for identifying home games and determining winners, such as:
+
+-   date, round, venue
+
+-   home and away teams
+
+-   final scores
+
+The dataset is published under the **Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)** licence, which allows reuse for educational and non-commercial purposes with proper attribution.
+
+###### **Question3: In your submission, include comprehensive details about your data. You many like to include a read me and a data dictionary. Also be sure to make clear the type of data (census, sample, experimental), any data limitations, data privacy or any ethical considerations. The relevant details here will depend on the data you choose and the analysis you perform.**
+
+**Data Dictionary:**
+
+-   The data in this file contains the following variables:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tibble)
+
+data_dictionary <- tribble(
+  ~Variable,       ~Type,     ~Description,
+  "Date",          "Date",    "The date the match was played (e.g., 29-Mar-2014)",
+  "Year",          "Integer", "Year extracted from Date",
+  "Round",         "String",  "Round identifier (e.g., R1, R2, QF, GF)",
+  "Home_Team",     "String",  "Name of the home team",
+  "Away_Team",     "String",  "Name of the away team",
+  "Home_Total",    "Integer", "Home team total points",
+  "Away_Total",    "Integer", "Away team total points",
+  "Venue",         "String",  "Stadium name (e.g., MCG, SCG, Marvel Stadium)",
+  "Home_Win",      "Binary",  "1 if home team won, 0 if not (NA if draw)",
+  "Is_Finals",     "Boolean", "TRUE if match is a final (based on Round), FALSE otherwise"
+)
+print(data_dictionary)
+```
+
+**README**
+
+Author: Sumintra Boonmat
+
+Date of Release: 20/06/2025
+
+Description:
+
+The following dataset supports an analysis of home ground advantage in the Australian Football League (AFL) over the 2014–2024 seasons. It includes structured match-level data derived from the publicly available AFL Tables.
+
+Each record corresponds to a match and includes variables such as match date, round, home and away teams, scores, venue, and derived indicators such as match outcome (home win/loss) and whether the match occurred during the finals series. The dataset has been processed from a raw text format into a structured tabular format using R, with additional columns created for team performance and season analysis.
+
+This data was used to investigate whether home ground advantage persists in modern AFL seasons, how it varies between teams, and whether it holds in finals matches.
+
+The finals rounds in AFL are typically abbreviated as:
+
+-   EF - Elimination Final
+-   QF - Qualifying Final
+-   SF - Semi Final
+-   PF - Preliminary Final
+-   GF - Grand Final
+
+Data Source:
+
+-   [AFL Tables](#0) which maintained by Rohan Connolly and AFL statistics volunteers
+
+Data Type:
+
+-   Observational data from historical records
+
+Limitations:
+
+-   Rounds are abbreviated and finals rounds require classification (e.g., QF, GF).
+-   Some venues may have changed names over time.
+
+License:
+
+-   Creative Commons Attribution-NonCommercial-ShareAlike 3.0 (CC BY-NC-SA 3.0)
+
+###### **Question4: Describe the steps to download your data and any steps to process your data for your analysis.**
+
+Steps to download the data and data cleaning:
+
+1.  Visit the website [AFL Tables](https://afltables.com/afl/afl_index.html).
+2.  Under the “Big List” section, click on **“All games in chronological order”**, which links to the file `bg3.txt`. This text file contains every AFL game since 1897.
+3.  Use R to download the file directly:
+
+```{r}
+download.file(
+  url = "https://afltables.com/afl/stats/biglists/bg3.txt",
+  destfile = "data/game_stats.txt"
+)
+```
+
+4.  Read the raw file and skip the first two non-data lines.
+
+```{r}
+raw_game_stats <- readLines("data/game_stats.txt")[-c(1,2)]
+```
+
+5.  Parse the text into structured columns.
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(stringr)
+library(tibble)
+library(lubridate)
+
+parsed <- str_match(raw_game_stats,
+  '^\\s*"?(\\d+)\\.\\s+(\\d{1,2}-[A-Za-z]+-\\d{4})\\s+(R\\d+|EF|QF|SF|PF|GF)\\s+([A-Za-z .]+?)\\s+(\\d+\\.\\d+\\.\\d+)\\s+([A-Za-z .]+?)\\s+(\\d+\\.\\d+\\.\\d+)\\s+(.*?)"?$'
+)
+
+match_df <- as_tibble(parsed[, -1])
+colnames(match_df) <- c(
+  "Match_No", "Date", "Round", "Home_Team", "Home_Score",
+  "Away_Team", "Away_Score", "Venue"
+)
+
+match_df <- match_df |>
+  mutate(across(everything(), str_trim))
+
+```
+
+6.  Convert date to a proper format and filter matches between **2014 and 2024**.
+
+```{r message=FALSE, warning=FALSE}
+match_df <- match_df |>
+  mutate(
+    Date = dmy(Date),
+    Year = year(Date)
+  )
+
+match_recent <- match_df |>
+  filter(year(Date) >= 2014, year(Date) <= 2024)
+```
+
+7.  Split the score strings into goals, behinds, and total points.
+
+```{r}
+split_score <- function(score_str) {
+  parts <- str_split_fixed(score_str, "\\.", 3)
+  tibble(
+    Goals = as.numeric(parts[,1]),
+    Behinds = as.numeric(parts[,2]),
+    Total = as.numeric(parts[,3])
+  )
+}
+
+home_scores <- split_score(match_recent$Home_Score)
+away_scores <- split_score(match_recent$Away_Score)
+
+match_clean <- match_recent |>
+  bind_cols(
+    home_scores |> 
+      rename(Home_Goals = Goals, Home_Behinds = Behinds, Home_Total = Total),
+    away_scores |> 
+      rename(Away_Goals = Goals, Away_Behinds = Behinds, Away_Total = Total)
+  )
+
+```
+
+8.  Create new variables to indicate whether the home team won and team is in the final round or not.
+
+```{r}
+match_clean <- match_clean |>
+  mutate(
+    Home_Win = case_when(
+      Home_Total > Away_Total ~ 1,
+      Home_Total < Away_Total ~ 0,
+      TRUE ~ NA_real_  # for draws
+    ),
+    Match_Finals = Round %in% c("EF", "QF", "SF", "PF", "GF")
+  )
+```
+
+9.  Select relevant columns for analysis.
+
+```{r}
+final_matches <- match_clean |>
+  select(Match_No,Year, Date, Round, Venue,
+         Home_Team, Home_Total,
+         Away_Team, Away_Total,
+         Home_Win, Match_Finals)
+```
+
+###### **References**
+
+Wickham H, François R, Henry L, Müller K, Vaughan D (2023). *dplyr: A Grammar of Data Manipulation*. R package version 1.1.4, <https://CRAN.R-project.org/package=dplyr>.
+
+Wickham H (2023). *stringr: Simple, Consistent Wrappers for Common String Operations*. R package version 1.5.1, <https://CRAN.R-project.org/package=stringr>.
+
+Müller K, Wickham H (2023). *tibble: Simple Data Frames*. R package version 3.2.1, <https://CRAN.R-project.org/package=tibble>.
+
+Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy with lubridate. Journal of Statistical Software, 40(3), 1-25. URL https://www.jstatsoft.org/v40/i03/.
+
+<!-- Task 2 Tab: Writing your blogpost -->
+
+## Blog post
+
+### What's in this section
+
+Here is where you should write your blogpost! (Task 2)
+
+### Blogpost Structure
+
+There is no strict structure for you to follow. However, here is a skeleton structure you may find helpful.
+
+1.  Title (is set at the top of this document)
+2.  Motivation\
+3.  Data\
+4.  Analysis\
+5.  Conclusions\
+6.  References
+
+<!-- Task 3 Tab: Behind the Scenes -  -->
+
+## Behind the Scenes
+
+### What's in this section
+
+Here is where you should tell us about your reflection on your analysis (Task 3).
+
+Again, these are the details about **your** perspective and the gritty details behind the scenes of your analysis.
+:::
