@@ -343,13 +343,23 @@ AFL Tables. (n.d.). *AFL match results and statistics*. Retrieved from <https://
 
 ###### **Question6: Were there any challenges that you faced in conducting this analysis. These may take the form of data limitations or coding challenges? (e.g. Was there anything in your analysis that you were not anticipating when you started? Did you have to change your intended scope? Did you need to master a new skill? Were there any problems you were proud of solving?)**
 
+One big challenge in this analysis was handling the long history of AFL data. Since the AFL premiership has run from 1897 to the present. Many things have changed, teams have joined, merged, or left, and stadiums have been renamed. This made it hard to keep team names and home grounds consistent over time.
+
+To keep things clear, I focused only on the last 10 seasons (2014–2024), when the data was more stable and consistent. Figuring out which games were true home games (and not at shared or neutral venues) also took careful logic and sometimes manual checks.
+
 ###### **Question7: Tell us about any imperfect parts of your work and how you would like to expand or improve this analysis in future? Be clear about any limitations or aspects of your analysis that fell beyond scope.**
+
+**Limitations:**\
+This analysis only looked at basic match results like wins and total points. It didn’t include other important factors like player injuries, crowd size, or weather, which could help explain the results more.
+
+**Future Improvements:**\
+Some venues like the MCG and Marvel Stadium are used as a home ground by more than one team, e.g., St Kilda and Essendon have Marvel Stadium as their home venue, so it's harder to tell which team really has the home advantage. For future improvement, we could consider things like bye rounds, how familiar teams are with the venue, and how the crowd is split between teams.
 
 ###### **Question8: Also submit 4 earlier versions of your assignment that show your iterative process. These should be your messy versions and include exploratory code. We recommend you save these files as you progress through your assignment. Provide a short overview for markers of what you fixed/learnt/improved/changed between each file. (If you are comfortable with GitHub you may submit your Github repo, but please refer to individual commits.)**
 
-### What's in this section
+I use [GitHub](https://github.com/SumintraB/etc5512-assignment4) to record my workflow history:
 
-Here is where you should tell us about your reflection on your analysis (Task 3).
-
-Again, these are the details about **your** perspective and the gritty details behind the scenes of your analysis.
+-   **3db1d6a**: added task 1 - Imported the data, data cleaning.
+-   **db96c74**: added task2 - Write blog post and calculated and visualized win rates.
+-   **905902c**: added task 3 - Behind the scenes details added.
 :::
