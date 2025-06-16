@@ -219,14 +219,129 @@ Here is where you should write your blogpost! (Task 2)
 
 ### Blogpost Structure
 
-There is no strict structure for you to follow. However, here is a skeleton structure you may find helpful.
+## Blog post
 
-1.  Title (is set at the top of this document)
-2.  Motivation\
-3.  Data\
-4.  Analysis\
-5.  Conclusions\
-6.  References
+### Has home ground advantage significantly affected match outcomes over the past decade of AFL from 2014 to 2024.
+
+***“Home ground advantage”*** **refers to the belief that teams are more likely to win when they play at their traditional home venue, a concept deeply embedded in Australian Football League (AFL)** **culture and one of the most frequently debated ideas in sports.** But does playing on your home turf still significantly affect outcomes in modern professional footy? With the rise of interstate teams, neutral venues, and structured finals systems, it's worth investigating whether this long-held assumption still holds true. In this blog post, I analyse 10 seasons of AFL match data to explore three key questions:
+
+1.  Do teams win more often at home?
+
+2.  Has the impact of home ground advantage changed over time?
+
+3.  Does home advantage persist during finals?
+
+The dataset was sourced from AFL Tables, which records every AFL game played since 1897. I filtered matches from 2014 to 2024 and parsed match details such as date, round, home and away teams, scores, and venues. Scores were broken down into goals, behinds, and total points, and I create new variables like Home_Win and Match_Finals to enable targeted analysis.
+
+The cleaned dataset allowed me to calculate win percentages, visualise trends over time, and compare performance between finals and regular season matches.
+
+**Analysis**
+
+**1. Home Win Rate by Team**
+
+Home ground advantage is a widely discussed concept in the AFL, and this analysis helps quantify its impact over the past decade. The chart shows that some teams, such as Geelong and Port Adelaide, have consistently won more than 50% of their home games, suggesting a strong advantage when playing on familiar turf. In contrast, other teams, including Carlton and North Melbourne, have struggled to achieve similar success at home.
+
+These differences may be influenced by other factors such as weather, crowd support, etc.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+library(dplyr)
+
+home_win_rate_team <- final_matches |>
+  group_by(Home_Team) |>
+  summarise(
+    Games = n(),
+    Wins = sum(Home_Win, na.rm = TRUE),
+    Win_Rate = Wins / Games
+  ) |>
+  arrange(desc(Win_Rate))
+
+ggplot(home_win_rate_team, aes(x = reorder(Home_Team, Win_Rate), y = Win_Rate)) +
+  geom_col(fill = "#0066cc") +
+  coord_flip() +
+  labs(
+    title = "Home Win Rate by Team (2014–2024)",
+    x = "Team",
+    y = "Win Rate"
+  ) +
+  ylim(0, 1) +
+  theme_minimal()
+
+```
+
+**2. Home Win Rate Across Time**
+
+An annual analysis of home win rates from 2014 to 2024 shows that home ground advantage has remained relatively stable, with win rates consistently above 50%. Most years fall within the 52–59% range, with peaks in 2016 and 2022 reaching around 59%. The lowest point occurred in 2021, dipping to approximately 51%, likely due to lingering COVID-19 disruptions. Overall, home teams have won more often than lost across every year, confirming that home ground advantage has been present and continues to play a meaningful role in match outcomes.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+home_win_rate_year <- final_matches |>
+  group_by(Year) |>
+  summarise(
+    Games = n(),
+    Wins = sum(Home_Win, na.rm = TRUE),
+    Win_Rate = Wins / Games
+  )
+
+ggplot(home_win_rate_year, aes(x = Year, y = Win_Rate)) +
+  geom_line(color = "#0066cc", size = 1) +
+  geom_point(color = "#DC1F26", size = 2) +
+  labs(
+    title = "Home Win Rate by Year (2014–2024)",
+    x = "Year",
+    y = "Win Rate"
+  ) +
+  ylim(0, 1) +
+  theme_minimal()
+
+```
+
+**3. Finals vs Regular Season Performance**
+
+2014–2024 period:
+
+-   Home win rate in **regular season games**: \~53–54%
+
+-   Home win rate in **finals**: \~55%
+
+This small but noticeable increase suggests that playing at home may offer a slight edge in finals, though the competitive nature of finals and use of shared venues like the MCG likely moderate this effect.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+home_win_rate_roundtype <- final_matches |>
+  mutate(Round_Type = ifelse(Match_Finals, "Finals", "Regular Season")) |>
+  group_by(Round_Type) |>
+  summarise(
+    Games = n(),
+    Wins = sum(Home_Win, na.rm = TRUE),
+    Win_Rate = Wins / Games
+  )
+
+ggplot(home_win_rate_roundtype, aes(x = Round_Type, y = Win_Rate, fill = Round_Type)) +
+  geom_col(width = 0.5) +
+  scale_fill_manual(values = c("Finals" = "#DC1F26", "Regular Season" = "#0066cc")) +
+  labs(
+    title = "Home Win Rate: Finals vs Regular Season",
+    x = "",
+    y = "Win Rate"
+  ) +
+  ylim(0, 1) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+**Conclusions**
+
+-   **Home ground advantage exists but is modest**: Over the past 10 seasons, home teams have won slightly more than half of their matches.
+
+-   **Team variation matters**: Some teams benefit more from home conditions than others.
+
+-   **Finals reduce the effect**: High-stakes matches at shared venues tend to neutralise home-field benefits.
+
+These findings challenge the traditional view that home ground advantage is a dominant factor in AFL outcomes. For supporters, clubs, and analysts, it’s worth acknowledging that in today’s professional era, preparation and team quality may outweigh location.
+
+**References**
+
+AFL Tables. (n.d.). *AFL match results and statistics*. Retrieved from <https://afltables.com/afl/afl_index.html>
 
 <!-- Task 3 Tab: Behind the Scenes -  -->
 
