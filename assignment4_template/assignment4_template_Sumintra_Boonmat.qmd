@@ -213,14 +213,6 @@ Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy with lubrida
 
 ## Blog post
 
-### What's in this section
-
-Here is where you should write your blogpost! (Task 2)
-
-### Blogpost Structure
-
-## Blog post
-
 ### Has home ground advantage significantly affected match outcomes over the past decade of AFL from 2014 to 2024.
 
 ***“Home ground advantage”*** **refers to the belief that teams are more likely to win when they play at their traditional home venue, a concept deeply embedded in Australian Football League (AFL)** **culture and one of the most frequently debated ideas in sports.** But does playing on your home turf still significantly affect outcomes in modern professional footy? With the rise of interstate teams, neutral venues, and structured finals systems, it's worth investigating whether this long-held assumption still holds true. In this blog post, I analyse 10 seasons of AFL match data to explore three key questions:

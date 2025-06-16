@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Who are you?? Add your name here">
+<meta name="author" content="Sumintra Boonmat">
 
-<title>What is your blogpost title? Add it here??</title>
+<title>Has home ground advantage significantly affected match outcomes over the past decade of AFL (2014-2024)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,19 +21,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="assignment4_template_ADDYOURNAMEHERE_files/libs/clipboard/clipboard.min.js"></script>
-<script src="assignment4_template_ADDYOURNAMEHERE_files/libs/quarto-html/quarto.js"></script>
-<script src="assignment4_template_ADDYOURNAMEHERE_files/libs/quarto-html/popper.min.js"></script>
-<script src="assignment4_template_ADDYOURNAMEHERE_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="assignment4_template_ADDYOURNAMEHERE_files/libs/quarto-html/anchor.min.js"></script>
-<link href="assignment4_template_ADDYOURNAMEHERE_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="assignment4_template_ADDYOURNAMEHERE_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="assignment4_template_ADDYOURNAMEHERE_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="assignment4_template_ADDYOURNAMEHERE_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="assignment4_template_ADDYOURNAMEHERE_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="assignment4_template_Sumintra_Boonmat_files/libs/clipboard/clipboard.min.js"></script>
+<script src="assignment4_template_Sumintra_Boonmat_files/libs/quarto-html/quarto.js"></script>
+<script src="assignment4_template_Sumintra_Boonmat_files/libs/quarto-html/popper.min.js"></script>
+<script src="assignment4_template_Sumintra_Boonmat_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="assignment4_template_Sumintra_Boonmat_files/libs/quarto-html/anchor.min.js"></script>
+<link href="assignment4_template_Sumintra_Boonmat_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="assignment4_template_Sumintra_Boonmat_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="assignment4_template_Sumintra_Boonmat_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="assignment4_template_Sumintra_Boonmat_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="assignment4_template_Sumintra_Boonmat_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -46,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">What is your blogpost title? Add it here??</h1>
+<h1 class="title">Has home ground advantage significantly affected match outcomes over the past decade of AFL (2014-2024)</h1>
 <p class="subtitle lead">Assignment 4 ETC5512</p>
 </div>
 
@@ -57,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Who are you?? Add your name here </p>
+             <p>Sumintra Boonmat </p>
           </div>
   </div>
     
@@ -74,43 +108,268 @@ ul.task-list li input[type="checkbox"] {
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Data and Documenting</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Blog post</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Behind the Scenes</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<section id="whats-in-this-section" class="level3">
-<h3 class="anchored" data-anchor-id="whats-in-this-section">What’s in this section</h3>
-<p>Here is where you should provide the more comprehensive details about your data and your processing steps.</p>
-<p>These are the data details that an “average” blog post reader is not concerned with (Task 1).</p>
+<section id="question1" class="level6">
+<h6 class="anchored" data-anchor-id="question1"><strong>Question1:</strong></h6>
+<p>Has home ground advantage significantly affected match outcomes over the past decade of AFL from 2014 to 2024.</p>
+<p>I’m an AFL fan, and home advantage is often discussed but rarely quantified across time and teams. I am particularly interested in whether this effect varies by team or changes during finals.</p>
 </section>
-<section id="remember" class="level3">
-<h3 class="anchored" data-anchor-id="remember">Remember</h3>
-<p>Please mention any additional files that you want the markers to review, eg. read me, meta data etc.</p>
+<section id="question2-what-data-will-you-be-using-to-answer-that-question-explain-why-this-data-is-suitable-for-the-task." class="level6">
+<h6 class="anchored" data-anchor-id="question2-what-data-will-you-be-using-to-answer-that-question-explain-why-this-data-is-suitable-for-the-task."><strong>Question2: What data will you be using to answer that question? Explain why this data is suitable for the task.</strong></h6>
+<p>To answer the question I use the dataset from <a href="https://afltables.com/afl/stats/biglists/bg3.txt" class="uri">AFL Tables</a> which contains historical records of every AFL game played since 1897 up to 2024 season in a plain-text format. Moreover, the dataset also includes variables which are all necessary for identifying home games and determining winners, such as:</p>
+<ul>
+<li><p>date, round, venue</p></li>
+<li><p>home and away teams</p></li>
+<li><p>final scores</p></li>
+</ul>
+<p>The dataset is published under the&nbsp;<strong>Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)</strong>&nbsp;licence, which allows reuse for educational and non-commercial purposes with proper attribution.</p>
+</section>
+<section id="question3-in-your-submission-include-comprehensive-details-about-your-data.-you-many-like-to-include-a-read-me-and-a-data-dictionary.-also-be-sure-to-make-clear-the-type-of-data-census-sample-experimental-any-data-limitations-data-privacy-or-any-ethical-considerations.-the-relevant-details-here-will-depend-on-the-data-you-choose-and-the-analysis-you-perform." class="level6">
+<h6 class="anchored" data-anchor-id="question3-in-your-submission-include-comprehensive-details-about-your-data.-you-many-like-to-include-a-read-me-and-a-data-dictionary.-also-be-sure-to-make-clear-the-type-of-data-census-sample-experimental-any-data-limitations-data-privacy-or-any-ethical-considerations.-the-relevant-details-here-will-depend-on-the-data-you-choose-and-the-analysis-you-perform."><strong>Question3: In your submission, include comprehensive details about your data. You many like to include a read me and a data dictionary. Also be sure to make clear the type of data (census, sample, experimental), any data limitations, data privacy or any ethical considerations. The relevant details here will depend on the data you choose and the analysis you perform.</strong></h6>
+<p><strong>Data Dictionary:</strong></p>
+<ul>
+<li>The data in this file contains the following variables:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 3
+   Variable   Type    Description                                               
+   &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;                                                     
+ 1 Date       Date    The date the match was played (e.g., 29-Mar-2014)         
+ 2 Year       Integer Year extracted from Date                                  
+ 3 Round      String  Round identifier (e.g., R1, R2, QF, GF)                   
+ 4 Home_Team  String  Name of the home team                                     
+ 5 Away_Team  String  Name of the away team                                     
+ 6 Home_Total Integer Home team total points                                    
+ 7 Away_Total Integer Away team total points                                    
+ 8 Venue      String  Stadium name (e.g., MCG, SCG, Marvel Stadium)             
+ 9 Home_Win   Binary  1 if home team won, 0 if not (NA if draw)                 
+10 Is_Finals  Boolean TRUE if match is a final (based on Round), FALSE otherwise</code></pre>
+</div>
+</div>
+<p><strong>README</strong></p>
+<p>Author: Sumintra Boonmat</p>
+<p>Date of Release: 20/06/2025</p>
+<p>Description:</p>
+<p>The following dataset supports an analysis of home ground advantage in the Australian Football League (AFL) over the 2014–2024 seasons. It includes structured match-level data derived from the publicly available AFL Tables.</p>
+<p>Each record corresponds to a match and includes variables such as match date, round, home and away teams, scores, venue, and derived indicators such as match outcome (home win/loss) and whether the match occurred during the finals series. The dataset has been processed from a raw text format into a structured tabular format using R, with additional columns created for team performance and season analysis.</p>
+<p>This data was used to investigate whether home ground advantage persists in modern AFL seasons, how it varies between teams, and whether it holds in finals matches.</p>
+<p>The finals rounds in AFL are typically abbreviated as:</p>
+<ul>
+<li>EF - Elimination Final</li>
+<li>QF - Qualifying Final</li>
+<li>SF - Semi Final</li>
+<li>PF - Preliminary Final</li>
+<li>GF - Grand Final</li>
+</ul>
+<p>Data Source:</p>
+<ul>
+<li><a href="#0">AFL Tables</a> which maintained by Rohan Connolly and AFL statistics volunteers</li>
+</ul>
+<p>Data Type:</p>
+<ul>
+<li>Observational data from historical records</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>Rounds are abbreviated and finals rounds require classification (e.g., QF, GF).</li>
+<li>Some venues may have changed names over time.</li>
+</ul>
+<p>License:</p>
+<ul>
+<li>Creative Commons Attribution-NonCommercial-ShareAlike 3.0 (CC BY-NC-SA 3.0)</li>
+</ul>
+</section>
+<section id="question4-describe-the-steps-to-download-your-data-and-any-steps-to-process-your-data-for-your-analysis." class="level6">
+<h6 class="anchored" data-anchor-id="question4-describe-the-steps-to-download-your-data-and-any-steps-to-process-your-data-for-your-analysis."><strong>Question4: Describe the steps to download your data and any steps to process your data for your analysis.</strong></h6>
+<p>Steps to download the data and data cleaning:</p>
+<ol type="1">
+<li>Visit the website <a href="https://afltables.com/afl/afl_index.html">AFL Tables</a>.</li>
+<li>Under the “Big List” section, click on&nbsp;<strong>“All games in chronological order”</strong>, which links to the file&nbsp;<code>bg3.txt</code>. This text file contains every AFL game since 1897.</li>
+<li>Use R to download the file directly:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://afltables.com/afl/stats/biglists/bg3.txt"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="st">"data/game_stats.txt"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Read the raw file and skip the first two non-data lines.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>raw_game_stats <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">"data/game_stats.txt"</span>)[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>Parse the text into structured columns.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>parsed <span class="ot">&lt;-</span> <span class="fu">str_match</span>(raw_game_stats,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">'^</span><span class="sc">\\</span><span class="st">s*"?(</span><span class="sc">\\</span><span class="st">d+)</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">s+(</span><span class="sc">\\</span><span class="st">d{1,2}-[A-Za-z]+-</span><span class="sc">\\</span><span class="st">d{4})</span><span class="sc">\\</span><span class="st">s+(R</span><span class="sc">\\</span><span class="st">d+|EF|QF|SF|PF|GF)</span><span class="sc">\\</span><span class="st">s+([A-Za-z .]+?)</span><span class="sc">\\</span><span class="st">s+(</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+)</span><span class="sc">\\</span><span class="st">s+([A-Za-z .]+?)</span><span class="sc">\\</span><span class="st">s+(</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+)</span><span class="sc">\\</span><span class="st">s+(.*?)"?$'</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>match_df <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(parsed[, <span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(match_df) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Match_No"</span>, <span class="st">"Date"</span>, <span class="st">"Round"</span>, <span class="st">"Home_Team"</span>, <span class="st">"Home_Score"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Away_Team"</span>, <span class="st">"Away_Score"</span>, <span class="st">"Venue"</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>match_df <span class="ot">&lt;-</span> match_df <span class="sc">|&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), str_trim))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
+<li>Convert date to a proper format and filter matches between <strong>2014 and 2024</strong>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>match_df <span class="ot">&lt;-</span> match_df <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Date =</span> <span class="fu">dmy</span>(Date),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> <span class="fu">year</span>(Date)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>match_recent <span class="ot">&lt;-</span> match_df <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Date) <span class="sc">&gt;=</span> <span class="dv">2014</span>, <span class="fu">year</span>(Date) <span class="sc">&lt;=</span> <span class="dv">2024</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="7" type="1">
+<li>Split the score strings into goals, behinds, and total points.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>split_score <span class="ot">&lt;-</span> <span class="cf">function</span>(score_str) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  parts <span class="ot">&lt;-</span> <span class="fu">str_split_fixed</span>(score_str, <span class="st">"</span><span class="sc">\\</span><span class="st">."</span>, <span class="dv">3</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Goals =</span> <span class="fu">as.numeric</span>(parts[,<span class="dv">1</span>]),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Behinds =</span> <span class="fu">as.numeric</span>(parts[,<span class="dv">2</span>]),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total =</span> <span class="fu">as.numeric</span>(parts[,<span class="dv">3</span>])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>home_scores <span class="ot">&lt;-</span> <span class="fu">split_score</span>(match_recent<span class="sc">$</span>Home_Score)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>away_scores <span class="ot">&lt;-</span> <span class="fu">split_score</span>(match_recent<span class="sc">$</span>Away_Score)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>match_clean <span class="ot">&lt;-</span> match_recent <span class="sc">|&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    home_scores <span class="sc">|&gt;</span> </span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rename</span>(<span class="at">Home_Goals =</span> Goals, <span class="at">Home_Behinds =</span> Behinds, <span class="at">Home_Total =</span> Total),</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    away_scores <span class="sc">|&gt;</span> </span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rename</span>(<span class="at">Away_Goals =</span> Goals, <span class="at">Away_Behinds =</span> Behinds, <span class="at">Away_Total =</span> Total)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="8" type="1">
+<li>Create new variables to indicate whether the home team won and team is in the final round or not.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>match_clean <span class="ot">&lt;-</span> match_clean <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Home_Win =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      Home_Total <span class="sc">&gt;</span> Away_Total <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      Home_Total <span class="sc">&lt;</span> Away_Total <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span>  <span class="co"># for draws</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Match_Finals =</span> Round <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"EF"</span>, <span class="st">"QF"</span>, <span class="st">"SF"</span>, <span class="st">"PF"</span>, <span class="st">"GF"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="9" type="1">
+<li>Select relevant columns for analysis.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>final_matches <span class="ot">&lt;-</span> match_clean <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Match_No,Year, Date, Round, Venue,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>         Home_Team, Home_Total,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>         Away_Team, Away_Total,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>         Home_Win, Match_Finals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="references" class="level6">
+<h6 class="anchored" data-anchor-id="references"><strong>References</strong></h6>
+<p>Wickham H, François R, Henry L, Müller K, Vaughan D (2023). <em>dplyr: A Grammar of Data Manipulation</em>. R package version 1.1.4, <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>.</p>
+<p>Wickham H (2023). <em>stringr: Simple, Consistent Wrappers for Common String Operations</em>. R package version 1.5.1, <a href="https://CRAN.R-project.org/package=stringr" class="uri">https://CRAN.R-project.org/package=stringr</a>.</p>
+<p>Müller K, Wickham H (2023). <em>tibble: Simple Data Frames</em>. R package version 3.2.1, <a href="https://CRAN.R-project.org/package=tibble" class="uri">https://CRAN.R-project.org/package=tibble</a>.</p>
+<p>Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy with lubridate. Journal of Statistical Software, 40(3), 1-25. URL https://www.jstatsoft.org/v40/i03/.</p>
 <!-- Task 2 Tab: Writing your blogpost -->
 </section>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<section id="whats-in-this-section-1" class="level3">
-<h3 class="anchored" data-anchor-id="whats-in-this-section-1">What’s in this section</h3>
-<p>Here is where you should write your blogpost! (Task 2)</p>
-</section>
-<section id="blogpost-structure" class="level3">
-<h3 class="anchored" data-anchor-id="blogpost-structure">Blogpost Structure</h3>
-<p>There is no strict structure for you to follow. However, here is a skeleton structure you may find helpful.</p>
+<section id="has-home-ground-advantage-significantly-affected-match-outcomes-over-the-past-decade-of-afl-from-2014-to-2024." class="level3">
+<h3 class="anchored" data-anchor-id="has-home-ground-advantage-significantly-affected-match-outcomes-over-the-past-decade-of-afl-from-2014-to-2024.">Has home ground advantage significantly affected match outcomes over the past decade of AFL from 2014 to 2024.</h3>
+<p><strong><em>“Home ground advantage”</em></strong> <strong>refers to the belief that teams are more likely to win when they play at their traditional home venue, a concept deeply embedded in Australian Football League (AFL)</strong> <strong>culture and one of the most frequently debated ideas in sports.</strong> But does playing on your home turf still significantly affect outcomes in modern professional footy? With the rise of interstate teams, neutral venues, and structured finals systems, it’s worth investigating whether this long-held assumption still holds true. In this blog post, I analyse 10 seasons of AFL match data to explore three key questions:</p>
 <ol type="1">
-<li>Title (is set at the top of this document)</li>
-<li>Motivation<br>
-</li>
-<li>Data<br>
-</li>
-<li>Analysis<br>
-</li>
-<li>Conclusions<br>
-</li>
-<li>References</li>
+<li><p>Do teams win more often at home?</p></li>
+<li><p>Has the impact of home ground advantage changed over time?</p></li>
+<li><p>Does home advantage persist during finals?</p></li>
 </ol>
+<p>The dataset was sourced from AFL Tables, which records every AFL game played since 1897. I filtered matches from 2014 to 2024 and parsed match details such as date, round, home and away teams, scores, and venues. Scores were broken down into goals, behinds, and total points, and I create new variables like Home_Win and Match_Finals to enable targeted analysis.</p>
+<p>The cleaned dataset allowed me to calculate win percentages, visualise trends over time, and compare performance between finals and regular season matches.</p>
+<p><strong>Analysis</strong></p>
+<p><strong>1. Home Win Rate by Team</strong></p>
+<p>Home ground advantage is a widely discussed concept in the AFL, and this analysis helps quantify its impact over the past decade. The chart shows that some teams, such as Geelong and Port Adelaide, have consistently won more than 50% of their home games, suggesting a strong advantage when playing on familiar turf. In contrast, other teams, including Carlton and North Melbourne, have struggled to achieve similar success at home.</p>
+<p>These differences may be influenced by other factors such as weather, crowd support, etc.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment4_template_Sumintra_Boonmat_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>2. Home Win Rate Across Time</strong></p>
+<p>An annual analysis of home win rates from 2014 to 2024 shows that home ground advantage has remained relatively stable, with win rates consistently above 50%. Most years fall within the 52–59% range, with peaks in 2016 and 2022 reaching around 59%. The lowest point occurred in 2021, dipping to approximately 51%, likely due to lingering COVID-19 disruptions. Overall, home teams have won more often than lost across every year, confirming that home ground advantage has been present and continues to play a meaningful role in match outcomes.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment4_template_Sumintra_Boonmat_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>3. Finals vs Regular Season Performance</strong></p>
+<p>2014–2024 period:</p>
+<ul>
+<li><p>Home win rate in <strong>regular season games</strong>: ~53–54%</p></li>
+<li><p>Home win rate in <strong>finals</strong>: ~55%</p></li>
+</ul>
+<p>This small but noticeable increase suggests that playing at home may offer a slight edge in finals, though the competitive nature of finals and use of shared venues like the MCG likely moderate this effect.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment4_template_Sumintra_Boonmat_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Conclusions</strong></p>
+<ul>
+<li><p><strong>Home ground advantage exists but is modest</strong>: Over the past 10 seasons, home teams have won slightly more than half of their matches.</p></li>
+<li><p><strong>Team variation matters</strong>: Some teams benefit more from home conditions than others.</p></li>
+<li><p><strong>Finals reduce the effect</strong>: High-stakes matches at shared venues tend to neutralise home-field benefits.</p></li>
+</ul>
+<p>These findings challenge the traditional view that home ground advantage is a dominant factor in AFL outcomes. For supporters, clubs, and analysts, it’s worth acknowledging that in today’s professional era, preparation and team quality may outweigh location.</p>
+<p><strong>References</strong></p>
+<p>AFL Tables. (n.d.). <em>AFL match results and statistics</em>. Retrieved from <a href="https://afltables.com/afl/afl_index.html" class="uri">https://afltables.com/afl/afl_index.html</a></p>
 <!-- Task 3 Tab: Behind the Scenes -  -->
 </section>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<section id="whats-in-this-section-2" class="level3">
-<h3 class="anchored" data-anchor-id="whats-in-this-section-2">What’s in this section</h3>
+<section id="question5-tell-us-about-parts-of-your-data-processing-or-analysis-that-werent-sexy-and-wouldnt-typically-be-included-in-a-blog-post.-e.g.-was-their-any-data-drudgery-or-time-intensive-wrangling-were-there-any-repetitive-tasks-or-manual-tasks-if-it-was-easy-describe-what-made-it-easy" class="level6">
+<h6 class="anchored" data-anchor-id="question5-tell-us-about-parts-of-your-data-processing-or-analysis-that-werent-sexy-and-wouldnt-typically-be-included-in-a-blog-post.-e.g.-was-their-any-data-drudgery-or-time-intensive-wrangling-were-there-any-repetitive-tasks-or-manual-tasks-if-it-was-easy-describe-what-made-it-easy"><strong>Question5: Tell us about parts of your data processing or analysis that weren’t “sexy” and wouldn’t typically be included in a blog post. (e.g.&nbsp;Was their any data drudgery or time intensive wrangling? Were there any repetitive tasks or manual tasks? If it was easy, describe what made it easy?)</strong></h6>
+</section>
+<section id="question6-were-there-any-challenges-that-you-faced-in-conducting-this-analysis.-these-may-take-the-form-of-data-limitations-or-coding-challenges-e.g.-was-there-anything-in-your-analysis-that-you-were-not-anticipating-when-you-started-did-you-have-to-change-your-intended-scope-did-you-need-to-master-a-new-skill-were-there-any-problems-you-were-proud-of-solving" class="level6">
+<h6 class="anchored" data-anchor-id="question6-were-there-any-challenges-that-you-faced-in-conducting-this-analysis.-these-may-take-the-form-of-data-limitations-or-coding-challenges-e.g.-was-there-anything-in-your-analysis-that-you-were-not-anticipating-when-you-started-did-you-have-to-change-your-intended-scope-did-you-need-to-master-a-new-skill-were-there-any-problems-you-were-proud-of-solving"><strong>Question6: Were there any challenges that you faced in conducting this analysis. These may take the form of data limitations or coding challenges? (e.g.&nbsp;Was there anything in your analysis that you were not anticipating when you started? Did you have to change your intended scope? Did you need to master a new skill? Were there any problems you were proud of solving?)</strong></h6>
+</section>
+<section id="question7-tell-us-about-any-imperfect-parts-of-your-work-and-how-you-would-like-to-expand-or-improve-this-analysis-in-future-be-clear-about-any-limitations-or-aspects-of-your-analysis-that-fell-beyond-scope." class="level6">
+<h6 class="anchored" data-anchor-id="question7-tell-us-about-any-imperfect-parts-of-your-work-and-how-you-would-like-to-expand-or-improve-this-analysis-in-future-be-clear-about-any-limitations-or-aspects-of-your-analysis-that-fell-beyond-scope."><strong>Question7: Tell us about any imperfect parts of your work and how you would like to expand or improve this analysis in future? Be clear about any limitations or aspects of your analysis that fell beyond scope.</strong></h6>
+</section>
+<section id="question8-also-submit-4-earlier-versions-of-your-assignment-that-show-your-iterative-process.-these-should-be-your-messy-versions-and-include-exploratory-code.-we-recommend-you-save-these-files-as-you-progress-through-your-assignment.-provide-a-short-overview-for-markers-of-what-you-fixedlearntimprovedchanged-between-each-file.-if-you-are-comfortable-with-github-you-may-submit-your-github-repo-but-please-refer-to-individual-commits." class="level6">
+<h6 class="anchored" data-anchor-id="question8-also-submit-4-earlier-versions-of-your-assignment-that-show-your-iterative-process.-these-should-be-your-messy-versions-and-include-exploratory-code.-we-recommend-you-save-these-files-as-you-progress-through-your-assignment.-provide-a-short-overview-for-markers-of-what-you-fixedlearntimprovedchanged-between-each-file.-if-you-are-comfortable-with-github-you-may-submit-your-github-repo-but-please-refer-to-individual-commits."><strong>Question8: Also submit 4 earlier versions of your assignment that show your iterative process. These should be your messy versions and include exploratory code. We recommend you save these files as you progress through your assignment. Provide a short overview for markers of what you fixed/learnt/improved/changed between each file. (If you are comfortable with GitHub you may submit your Github repo, but please refer to individual commits.)</strong></h6>
+</section>
+<section id="whats-in-this-section" class="level3">
+<h3 class="anchored" data-anchor-id="whats-in-this-section">What’s in this section</h3>
 <p>Here is where you should tell us about your reflection on your analysis (Task 3).</p>
 <p>Again, these are the details about <strong>your</strong> perspective and the gritty details behind the scenes of your analysis.</p>
 </section>
