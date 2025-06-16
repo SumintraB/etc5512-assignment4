@@ -358,26 +358,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <section id="question5-tell-us-about-parts-of-your-data-processing-or-analysis-that-werent-sexy-and-wouldnt-typically-be-included-in-a-blog-post.-e.g.-was-their-any-data-drudgery-or-time-intensive-wrangling-were-there-any-repetitive-tasks-or-manual-tasks-if-it-was-easy-describe-what-made-it-easy" class="level6">
 <h6 class="anchored" data-anchor-id="question5-tell-us-about-parts-of-your-data-processing-or-analysis-that-werent-sexy-and-wouldnt-typically-be-included-in-a-blog-post.-e.g.-was-their-any-data-drudgery-or-time-intensive-wrangling-were-there-any-repetitive-tasks-or-manual-tasks-if-it-was-easy-describe-what-made-it-easy"><strong>Question5: Tell us about parts of your data processing or analysis that weren’t “sexy” and wouldn’t typically be included in a blog post. (e.g.&nbsp;Was their any data drudgery or time intensive wrangling? Were there any repetitive tasks or manual tasks? If it was easy, describe what made it easy?)</strong></h6>
+<p>The time consuming part but important in this analysis was manually checking whether each team’s home ground matched the game location. This step was time-consuming but important, since correctly identifying true home games was key to the analysis. It wasn’t something that could be fully automated, and it required careful attention to detail.</p>
 </section>
 <section id="question6-were-there-any-challenges-that-you-faced-in-conducting-this-analysis.-these-may-take-the-form-of-data-limitations-or-coding-challenges-e.g.-was-there-anything-in-your-analysis-that-you-were-not-anticipating-when-you-started-did-you-have-to-change-your-intended-scope-did-you-need-to-master-a-new-skill-were-there-any-problems-you-were-proud-of-solving" class="level6">
 <h6 class="anchored" data-anchor-id="question6-were-there-any-challenges-that-you-faced-in-conducting-this-analysis.-these-may-take-the-form-of-data-limitations-or-coding-challenges-e.g.-was-there-anything-in-your-analysis-that-you-were-not-anticipating-when-you-started-did-you-have-to-change-your-intended-scope-did-you-need-to-master-a-new-skill-were-there-any-problems-you-were-proud-of-solving"><strong>Question6: Were there any challenges that you faced in conducting this analysis. These may take the form of data limitations or coding challenges? (e.g.&nbsp;Was there anything in your analysis that you were not anticipating when you started? Did you have to change your intended scope? Did you need to master a new skill? Were there any problems you were proud of solving?)</strong></h6>
+<p>One big challenge in this analysis was handling the long history of AFL data. Since the AFL premiership has run from 1897 to the present. Many things have changed, teams have joined, merged, or left, and stadiums have been renamed. This made it hard to keep team names and home grounds consistent over time.</p>
+<p>To keep things clear, I focused only on the last 10 seasons (2014–2024), when the data was more stable and consistent. Figuring out which games were true home games (and not at shared or neutral venues) also took careful logic and sometimes manual checks.</p>
 </section>
 <section id="question7-tell-us-about-any-imperfect-parts-of-your-work-and-how-you-would-like-to-expand-or-improve-this-analysis-in-future-be-clear-about-any-limitations-or-aspects-of-your-analysis-that-fell-beyond-scope." class="level6">
 <h6 class="anchored" data-anchor-id="question7-tell-us-about-any-imperfect-parts-of-your-work-and-how-you-would-like-to-expand-or-improve-this-analysis-in-future-be-clear-about-any-limitations-or-aspects-of-your-analysis-that-fell-beyond-scope."><strong>Question7: Tell us about any imperfect parts of your work and how you would like to expand or improve this analysis in future? Be clear about any limitations or aspects of your analysis that fell beyond scope.</strong></h6>
+<p><strong>Limitations:</strong><br>
+This analysis only looked at basic match results like wins and total points. It didn’t include other important factors like player injuries, crowd size, or weather, which could help explain the results more.</p>
+<p><strong>Future Improvements:</strong><br>
+Some venues like the MCG and Marvel Stadium are used as a home ground by more than one team, e.g., St Kilda and Essendon have Marvel Stadium as their home venue, so it’s harder to tell which team really has the home advantage. For future improvement, we could consider things like bye rounds, how familiar teams are with the venue, and how the crowd is split between teams.</p>
 </section>
 <section id="question8-also-submit-4-earlier-versions-of-your-assignment-that-show-your-iterative-process.-these-should-be-your-messy-versions-and-include-exploratory-code.-we-recommend-you-save-these-files-as-you-progress-through-your-assignment.-provide-a-short-overview-for-markers-of-what-you-fixedlearntimprovedchanged-between-each-file.-if-you-are-comfortable-with-github-you-may-submit-your-github-repo-but-please-refer-to-individual-commits." class="level6">
 <h6 class="anchored" data-anchor-id="question8-also-submit-4-earlier-versions-of-your-assignment-that-show-your-iterative-process.-these-should-be-your-messy-versions-and-include-exploratory-code.-we-recommend-you-save-these-files-as-you-progress-through-your-assignment.-provide-a-short-overview-for-markers-of-what-you-fixedlearntimprovedchanged-between-each-file.-if-you-are-comfortable-with-github-you-may-submit-your-github-repo-but-please-refer-to-individual-commits."><strong>Question8: Also submit 4 earlier versions of your assignment that show your iterative process. These should be your messy versions and include exploratory code. We recommend you save these files as you progress through your assignment. Provide a short overview for markers of what you fixed/learnt/improved/changed between each file. (If you are comfortable with GitHub you may submit your Github repo, but please refer to individual commits.)</strong></h6>
 <p>I use <a href="https://github.com/SumintraB/etc5512-assignment4">GitHub</a> to record my workflow history:</p>
 <ul>
 <li><strong>3db1d6a</strong>: added task 1 - Imported the data, data cleaning.</li>
-<li><strong>db96c74</strong>: added task2 - Writed blog post and calculated and visualisted win rates.</li>
-<li><strong>905902c</strong>: added task 3 -</li>
+<li><strong>db96c74</strong>: added task2 - Write blog post and calculated and visualized win rates.</li>
+<li><strong>29d7421</strong>: added task 3 - Behind the scenes details added.</li>
+<li>- Final version of the analysis.</li>
 </ul>
-</section>
-<section id="whats-in-this-section" class="level3">
-<h3 class="anchored" data-anchor-id="whats-in-this-section">What’s in this section</h3>
-<p>Here is where you should tell us about your reflection on your analysis (Task 3).</p>
-<p>Again, these are the details about <strong>your</strong> perspective and the gritty details behind the scenes of your analysis.</p>
 </section>
 </div>
 </div>
